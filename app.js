@@ -94,12 +94,12 @@ pm2.connect(function(err) {
           var physical = element.monit.memory;
           pointArray.push({
             measurement: 'cpu',
-            tags: { host: os.hostname() , service: element.name},
+            tags: { host: os.hostname() , service: element.name + element.pm_id},
             fields: { cpu_process_usage },
           });
           pointArray.push({
               measurement: 'memory',
-              tags: { host: os.hostname() , service: element.name},
+              tags: { host: os.hostname() , service: element.name + element.pm_id},
               fields: { physical }
            });
 
